@@ -51,7 +51,7 @@
       <div class="row" >
         <div class = "col-9  mb-3 d-flex justify-content-between" >
           <label class = "input-group-text" for = "inputGroupSelect01" >Type switcher</label >
-          <select v-model="productType" @change="changTypeProduct">
+          <select  id="productType" v-model="productType" @change="changTypeProduct">
             <option selected >Choose...</option >
             <option  v-for="item in getTypeProduct" :key="item.id"
                      :value = "item.name">{{item.name}}</option >
