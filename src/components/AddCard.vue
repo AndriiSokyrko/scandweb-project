@@ -61,7 +61,9 @@
           </select >
         </div >
       </div >
-
+      <div class="row justify-content-end" :class = "{'visible': errors[3].id==='price' && !errors[3].check}">
+        <div class="col-9" >{{errors[3].type}}</div>
+      </div >
       <!-- block SIZE DVD -->
       <div id="DVD" class="row" :class="{'d-none': !checkTypeProduct['DVD']}">
         <h3>Please, provide size</h3>
@@ -70,8 +72,8 @@
             <input id="size" type = "text"   v-model="size" placeholder="Please, provide size" v-on="handlers">
           </div>
         </div>
-      <div class="row justify-content-end" :class = "{'visible': errors[3].id==='size' && !errors[3].check}">
-        <div class="col-9" >{{errors[3].type}}</div>
+      <div class="row justify-content-end" :class = "{'visible': errors[4].id==='size' && !errors[4].check}">
+        <div class="col-9" >{{errors[4].type}}</div>
       </div >
 
       <!-- block FURNITURE -->
