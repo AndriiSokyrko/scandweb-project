@@ -32,10 +32,12 @@
       <!-- block NAME -->
       <div class="row">
           <div  class="col-9 p-2 d-flex align-middle justify-content-between">
-            <h3 >NAME</h3><input id="name" type = "check" v-model="name" placeholder="Please, provide name">
+            <h3 >NAME</h3><input id="name" type = "check" v-model="name" placeholder="Please, provide name" v-on="handlers">
           </div>
         </div><!-- row -->
-
+      <div class="row justify-content-end" :class = "{'visible': errors[1].id==='price' && !errors[1].check}">
+        <div class="col-9" >{{errors[1].type}}</div>
+      </div >
       <!-- block PRICE -->
       <div class="row">
           <div class="col-9 p-2 d-flex align-middle justify-content-between">
@@ -166,13 +168,33 @@ export default {
     getTypeProduct(){
       return this.$store.getters.getTypeProducts;
     },
+    getAllCards() {
+      return this.$store.getters.getCardAll;
+    }
   },
   methods:{
+    checkName(elm,data){
+      if(data){
+        let result = this.getAllCards.filter( elm => {
+          let regEx = new RegExp(data)
+          if(elm.name.match(regEx)){
+            return elm;
+          }
+        })
+        console.log(result);
+        if(result.length){
+          elm.check = true;
+          elm.type = 'Please, submit required data';
+        } else {
+          elm.check = false;
+          elm.type = '';
+        }
+      }
+    },
     checkChars(elm, id, data){
       if(elm.id === id && !isNaN(data)===true ) {
         elm.check = false;
         elm.type = '';
-
       }
       if(elm.id === id && !isNaN(data)===false && !data.match('/.*[a-zA-Zа-яФА-Я]+.*/g')){
         elm.check = true;
@@ -182,7 +204,6 @@ export default {
         if(elm.id === id && data===''){
           elm.check = true;
           elm.type = 'Please, submit required data';
-
         }
       }
     },
@@ -191,7 +212,11 @@ export default {
       let id = e.target.id;
       let data = e.target.value;
       this.errors.forEach(elm =>{
-        this.checkChars(elm,id,data);
+        if(elm.id ==='name'){
+          this.checkName(elm, data)
+        } else {
+          this.checkChars(elm,id,data);
+        }
       })
       let countCorrectElm = this.errors.filter(elm=>{
         return elm.correct === true;

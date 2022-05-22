@@ -7,7 +7,7 @@ const store = createStore({
             cards: [
                 {
                     id: 1,
-                    name: 'JVC200123',
+                    name: 'NameTest000',
                     typeProduct: 'Furniture',
                     sku: '1',
                     price: 10,
@@ -16,7 +16,7 @@ const store = createStore({
                 },
                 {
                     id: 2,
-                    name: 'JVC200123',
+                    name: 'NameTest001',
                     typeProduct: 'Book',
                     sku: '1',
                     price: 20,
@@ -26,7 +26,7 @@ const store = createStore({
                 },
                 {
                     id: 3,
-                    name: 'JVC200123',
+                    name: 'NameTest003',
                     typeProduct: 'DVD',
                     sku: '1',
                     price: 30,
