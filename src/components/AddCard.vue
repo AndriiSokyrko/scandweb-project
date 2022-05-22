@@ -1,6 +1,6 @@
 <template >
 <div>
-  <form class="m-5" @change="formCheckData">
+  <form class="m-5">
     <div class = "container" >
       <div class = "row" >
         <div class = "col-10 text-start">

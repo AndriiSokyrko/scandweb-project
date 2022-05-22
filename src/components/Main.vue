@@ -1,10 +1,9 @@
 <template> 
 <div>
-
-  <div class="main--menu" >
-    <router-link :to = "{name:'add'}" >Add card</router-link >
-    <router-lick to = "#" @click="massDelete">Mass delete</router-lick >
-  </div >
+  <nav class="main--menu" >
+    <button @click="addCard">ADD</button >
+    <button  @click="massDelete">MASS DELETE</button >
+  </nav >
   <div class="wrapper--cards mb-5">
     <div class="container">
       <div class="row gx-3 gy-3 text-center">
@@ -20,13 +19,15 @@
 import AppCard from "@/components/Card";
 export default {
   name: 'AppMain',
-
   computed: {
     getAllCards() {
       return this.$store.getters.getCardAll;
     }
   },
   methods:{
+    addCard(){
+      this.$router.push('/add')
+    },
     massDelete(e){
       e.preventDefault();
       this.$store.dispatch('massDelete')
@@ -50,7 +51,7 @@ h3 {
  }
 
 
-a{
+button{
   padding: 10px;
   cursor: pointer;
   margin-right: 25px;
