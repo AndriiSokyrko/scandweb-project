@@ -60,7 +60,7 @@
       </div >
 
       <!-- block SIZE DVD -->
-      <div id="DVD" class="row" :class="{'d-none': !checkTypeProduct['Dvd']}">
+      <div id="DVD" class="row" :class="{'d-none': !checkTypeProduct['DVD']}">
           <div class="col-9 d-flex align-middle justify-content-between">
             <h3>Size (MB)</h3>
             <input id="size" type = "text"   v-model="size" placeholder="Please, provide size" v-on="handlers">
