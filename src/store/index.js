@@ -8,7 +8,7 @@ const store = createStore({
                 {
                     id: 1,
                     name: 'NameTest000',
-                    typeProduct: 'Furniture',
+                    productType: 'Furniture',
                     sku: '1',
                     price: 10,
                     size: 700,
@@ -17,7 +17,7 @@ const store = createStore({
                 {
                     id: 2,
                     name: 'NameTest001',
-                    typeProduct: 'Book',
+                    productType: 'Book',
                     sku: '1',
                     price: 20,
                     width: 200,
@@ -27,7 +27,7 @@ const store = createStore({
                 {
                     id: 3,
                     name: 'NameTest003',
-                    typeProduct: 'DVD',
+                    productType: 'DVD',
                     sku: '1',
                     price: 30,
                     size: 2,
@@ -36,7 +36,7 @@ const store = createStore({
                 {
                     id: 4,
                     name: 'JVC200123',
-                    typeProduct: 'Furniture',
+                    productType: 'Furniture',
                     sku: '1',
                     price: 40,
                     width: 200,
@@ -46,7 +46,7 @@ const store = createStore({
                 {
                     id: 5,
                     name: 'JVC200123',
-                    typeProduct: 'Book',
+                    productType: 'Book',
                     sku: '1',
                     price: 50,
                     width: 200,
@@ -56,7 +56,7 @@ const store = createStore({
                 {
                     id: 6,
                     name: 'JVC200123',
-                    typeProduct: 'DVD',
+                    productType: 'DVD',
                     sku: '1',
                     price: 60,
                     size: 20,
@@ -65,7 +65,7 @@ const store = createStore({
                 {
                     id: 7,
                     name: 'JVC200123',
-                    typeProduct: 'Furniture',
+                    productType: 'Furniture',
                     sku: '1',
                     price: 70,
                     weight: 5
@@ -74,14 +74,14 @@ const store = createStore({
                 {
                     id: 8,
                     name: 'JVC200123',
-                    typeProduct: 'Furniture',
+                    productType: 'Furniture',
                     sku: '1',
                     price: 80,
                     size: 2,
 
                 },
             ],
-            typeProduct: [
+            productType: [
                 {id: 1, name: 'Furniture'},
                 {id: 2, name: 'Book'},
                 {id: 3, name: 'DVD'},
@@ -131,7 +131,7 @@ const store = createStore({
     getters: {
         getCardAll: state => state.cards,
         getLastId: state => state.cards[state.cards.length-1].id +1,
-        getTypeProducts: state => state.typeProduct
+        getTypeProducts: state => state.productType
     }
 })
 

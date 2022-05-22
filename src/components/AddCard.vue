@@ -173,15 +173,41 @@ export default {
     }
   },
   methods:{
+    checkFurniture() {
+      let allCards = this.getAllCards;
+      let h = document.getElementById('height').value
+      let w = document.getElementById('width').value
+      let l = document.getElementById('length').value
+      this.errors[4].type='';
+      this.errors[5].type='';
+      this.errors[6].type='';
+      this.errors[4].check = false;
+      this.errors[5].check = false;
+      this.errors[6].check = false;
+      for(let i =0; i<allCards.length;i++){
+        let elm = allCards[i];
+        if(elm.productType === 'Furniture'){
+          if(elm.height === Number(h)  && elm.width===Number(w) && elm.length ===Number(l)){
+            this.errors[4].type='Please, submit required data';
+            this.errors[5].type='Please, submit required data';
+            this.errors[6].type='Please, submit required data';
+            this.errors[4].check = true;
+            this.errors[5].check = true;
+            this.errors[6].check = true;
+            break;
+          }
+        }
+      }
+    },
     checkName(elm,data){
       if(data){
         let result = this.getAllCards.filter( elm => {
-          let regEx = new RegExp(data)
-          if(elm.name.match(regEx)){
+          // let regEx = new RegExp(data)
+          // if(elm.name.match(regEx)){
+          if(elm.name ===data){
             return elm;
           }
         })
-        console.log(result);
         if(result.length){
           elm.check = true;
           elm.type = 'Please, submit required data';
@@ -208,9 +234,12 @@ export default {
       }
     },
     checkData(e){
+      this.checkFurniture();
+
       document.getElementById('addCard').disabled = true;
       let id = e.target.id;
       let data = e.target.value;
+
       this.errors.forEach(elm =>{
         if(elm.id ==='name'){
           this.checkName(elm, data)
@@ -238,7 +267,7 @@ export default {
           document.getElementById('addCard').disabled = true;
 
         } else {
-
+         this.checkFurniture();
           document.getElementById('addCard').disabled = false;
         }
       }
