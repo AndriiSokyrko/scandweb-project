@@ -151,7 +151,7 @@ export default {
         {id: 'sku', check: '', type: '', correct: true, checkTypeProduct:''},
         {id: 'name', check: '', type: '', correct: false, checkTypeProduct:''},
         {id: 'price', check: '', type: '', correct: true, checkTypeProduct:''},
-        {id: 'size', check: '', type: '', correct: false, checkTypeProduct:'Dvd'},
+        {id: 'size', check: '', type: '', correct: false, checkTypeProduct:'DVD'},
         {id: 'height', check: '', type: '', correct: false, checkTypeProduct: 'Furniture'},
         {id: 'width', check: '', type: '', correct: false,checkTypeProduct: 'Furniture'},
         {id: 'length', check: '', type: '', correct: false,checkTypeProduct: 'Furniture'},
