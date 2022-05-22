@@ -84,7 +84,7 @@ const store = createStore({
             typeProduct: [
                 {id: 1, name: 'Furniture'},
                 {id: 2, name: 'Book'},
-                {id: 3, name: 'Dvd'},
+                {id: 3, name: 'DVD'},
             ],
             massDelete: []
 
