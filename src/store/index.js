@@ -100,21 +100,19 @@ const store = createStore({
                })
             if(!Object.keys(payload).length) return;
                  state.cards.push(temp)
-            console.log(state.cards);
         },
         addToMassDelete(state, id){
-            console.log(id);
           state.massDelete.push(id);
         },
         massDelete(state){
-            console.log(state.massDelete );
-            console.log(state.cards);
+            if(!state.massDelete.length){
+                return;
+            }
             let temp = state.cards.reduce((acc, elm) => {
                 if(state.massDelete.indexOf(elm.id) === -1) acc.push(elm);
                 return acc;
             },[])
             state.cards = temp;
-            console.log(temp);
         }
     },
     actions:{
