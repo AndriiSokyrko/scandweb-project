@@ -200,22 +200,19 @@ export default {
       }
     },
     checkName(elm,data){
-      if(data){
+      elm.check = false;
+      elm.type = '';
         let result = this.getAllCards.filter( elm => {
           // let regEx = new RegExp(data)
           // if(elm.name.match(regEx)){
-          if(elm.name ===data){
+          if(elm.name === data){
             return elm;
           }
         })
         if(result.length){
           elm.check = true;
           elm.type = 'Please, submit required data';
-        } else {
-          elm.check = false;
-          elm.type = '';
         }
-      }
     },
     checkChars(elm, id, data){
       if(elm.id === id && !isNaN(data)===true ) {
