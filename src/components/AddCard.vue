@@ -114,7 +114,7 @@
         <h3>Please, provide weight</h3>
         <div class="col-9 p-2 d-flex align-middle justify-content-between">
           <h3>Weight (KG)</h3>
-          <input id="weight" type = "text" v-model="weight" placeholder="Please, provide weight"  v-on="handlers">
+          <input id="weight" type = "text" v-model="weight" placeholder="Please, provide weight"  v-on="handlers" >
         </div>
       </div><!-- row -->
       <div class="row justify-content-end" :class = "{'visible': errors[8].id==='weight' && !errors[8].check}">
@@ -253,16 +253,7 @@ export default {
       },0)
 
       if(countCorrectElm.length === acc ){
-        // let l = countCorrectElm.length
-        // for (let i = 0; i<l;i++){
-        //  if(countCorrectElm[i].check===true){
-        //    break;
-        //  }
         document.getElementById('addCard').disabled = false;
-        // }
-        // if(acc === 3){
-        //   document.getElementById('addCard').disabled = true;
-        // }
       }
      },
     addCard(e){
@@ -288,6 +279,11 @@ export default {
       Object.keys(this.checkTypeProduct).forEach(key => this.checkTypeProduct[key]=false)
       this.checkTypeProduct[param] =true;
       this.errors.forEach((elm) => {
+        this.size = ''
+        this.weight = ''
+        this.height = ''
+        this.width = ''
+        this.length =''
         if(elm.checkTypeProduct === param){
           elm.correct = true;
         }
