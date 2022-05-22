@@ -1,6 +1,6 @@
 <template >
 <div>
-  <form class="m-5">
+  <form class="m-5" id="product_form">
     <div class = "container" >
       <div class = "row" >
         <div class = "col-10 text-start">
