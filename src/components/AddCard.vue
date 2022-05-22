@@ -153,6 +153,7 @@ export default {
         {id: 'sku', check: '', type: '', correct: true, checkTypeProduct:''},
         {id: 'name', check: '', type: '', correct: false, checkTypeProduct:''},
         {id: 'price', check: '', type: '', correct: true, checkTypeProduct:''},
+        {id: 'furniture', check: '', type: '', correct: true, checkTypeProduct:''},
         {id: 'size', check: '', type: '', correct: false, checkTypeProduct:'DVD'},
         {id: 'height', check: '', type: '', correct: false, checkTypeProduct: 'Furniture'},
         {id: 'width', check: '', type: '', correct: false,checkTypeProduct: 'Furniture'},
@@ -178,22 +179,27 @@ export default {
       let h = document.getElementById('height').value
       let w = document.getElementById('width').value
       let l = document.getElementById('length').value
-      this.errors[4].type='';
-      this.errors[5].type='';
-      this.errors[6].type='';
-      this.errors[4].check = false;
-      this.errors[5].check = false;
-      this.errors[6].check = false;
+      this.errors[3].type='';
+      this.errors[3].check = false;
+      // this.errors[5].type='';
+      // this.errors[6].type='';
+      // this.errors[7].type='';
+      // this.errors[5].check = false;
+      // this.errors[6].check = false;
+      // this.errors[7].check = false;
       for(let i =0; i<allCards.length;i++){
         let elm = allCards[i];
         if(elm.productType === 'Furniture'){
           if(elm.height === Number(h)  && elm.width===Number(w) && elm.length ===Number(l)){
-            this.errors[4].type='Please, submit required data';
-            this.errors[5].type='Please, submit required data';
-            this.errors[6].type='Please, submit required data';
-            this.errors[4].check = true;
-            this.errors[5].check = true;
-            this.errors[6].check = true;
+            this.errors[3].type='Please, provide Firniture';
+            this.errors[3].check = true;
+
+            // this.errors[5].type='Please, provide height';
+            // this.errors[6].type='Please, provide width';
+            // this.errors[7].type='Please, provide length';
+            // this.errors[5].check = true;
+            // this.errors[6].check = true;
+            // this.errors[7].check = true;
             break;
           }
         }
@@ -203,8 +209,6 @@ export default {
       elm.check = false;
       elm.type = '';
         let result = this.getAllCards.filter( elm => {
-          // let regEx = new RegExp(data)
-          // if(elm.name.match(regEx)){
           if(elm.name === data){
             return elm;
           }
