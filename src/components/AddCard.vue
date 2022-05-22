@@ -64,6 +64,7 @@
 
       <!-- block SIZE DVD -->
       <div id="DVD" class="row" :class="{'d-none': !checkTypeProduct['DVD']}">
+        <h3>Please, provide size</h3>
           <div class="col-9 d-flex align-middle justify-content-between">
             <h3>Size (MB)</h3>
             <input id="size" type = "text"   v-model="size" placeholder="Please, provide size" v-on="handlers">
@@ -76,6 +77,7 @@
       <!-- block FURNITURE -->
       <div id="furniture" :class="{'d-none': !checkTypeProduct['Furniture']}">
         <!-- HEIGHT -->
+        <h3>Please, provide dimensions</h3>
         <div class="row" >
             <div class = "col-9 p-2 d-flex align-middle justify-content-between" >
               <h3 >Height (CM)</h3>
@@ -109,6 +111,7 @@
 
       <!-- block BOOK -->
       <div id="Book" class="row" :class="{'d-none': !checkTypeProduct['Book']}">
+        <h3>Please, provide weight</h3>
         <div class="col-9 p-2 d-flex align-middle justify-content-between">
           <h3>Weight (KG)</h3>
           <input id="weight" type = "text" v-model="weight" placeholder="Please, provide weight"  v-on="handlers">
