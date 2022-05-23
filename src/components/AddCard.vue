@@ -212,7 +212,7 @@ export default {
           elm.check = true;
           elm.type = 'Please, provide name';
         }
-        console.log(this.errors);
+
     },
     checkChars(elm, id, data){
       if(elm.id === id && !isNaN(data)===true ) {
